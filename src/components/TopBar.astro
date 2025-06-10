@@ -1,0 +1,75 @@
+---
+const { title } = Astro.props;
+---
+
+<style>
+  .top-bar {
+    position: fixed;
+    height: 120px;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: white;
+    color: black;
+    padding: 1rem;
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+    z-index: 1000;
+  }
+
+  .hidden {
+    transform: translateY(-100%);
+  }
+  .top-bar-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .top-bar-title {  
+    font-size: 2rem;
+    font-weight: 300;
+    letter-spacing: 2px;
+  }
+  .top-bar-links {
+    display: flex;  
+    gap: 2rem;
+  }
+  .top-bar-links a {
+    text-decoration: none;
+    color: black;
+  }
+</style>
+
+<div id="top-bar" class="top-bar">
+    <div class="top-bar-content">
+        <div class="top-bar-title">
+            {title}
+        </div>
+        <div class="top-bar-links">
+            <a href="/">Inicio</a>
+            <a href="/nosotros">Nosotros</a>
+            <a href="/proyectos">Proyectos</a>
+            <a href="/contacto">Contacto</a>
+        </div>
+    </div>
+    
+</div>
+
+<script type="module" is:inline>
+  let lastScroll = 0;
+  const topBar = document.getElementById('top-bar');
+
+  window.addEventListener('scroll', () => {
+    const currentScroll = window.pageYOffset;
+
+    if (currentScroll > lastScroll && currentScroll > 50) {
+      // Scroll hacia abajo
+      topBar.classList.add('hidden');
+    } else {
+      // Scroll hacia arriba
+      topBar.classList.remove('hidden');
+    }
+
+    lastScroll = currentScroll;
+  });
+</script>
