@@ -1,4 +1,5 @@
 ---
+//const { title } = Astro.props;
 import logo from '../images/logo.png';
 ---
 
@@ -13,8 +14,10 @@ import logo from '../images/logo.png';
     color: black;
     padding: 1rem;
     text-align: center;
+    transition: transform 0.3s ease-in-out;
     z-index: 1000;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Montserrat', sans-serif; 
+
   }
 
   .hidden {
@@ -22,72 +25,43 @@ import logo from '../images/logo.png';
   }
 
   .top-bar-content {
+    margin-left: 100px;
+    margin-right: 100px;
     display: flex;
     justify-content: space-between;
     align-items: center;
   }
-
   .logo {
     width: 200px;
     height: auto;
   }
-
-  .top-bar-links {
-    display: flex;
-    align-items: center;
-    gap: 2rem;
-  }
-
-  .link-wrapper {
-    position: relative;
-    overflow: hidden;
-    height: 24px; /* ajusta si cambias el tamaño del texto */
-  }
-
   .a {
-    display: block;
-    font-weight: 1000;
     text-decoration: none;
-    color: black;
-    transition: transform 0.5s ease, color 0.3s ease;
+    color: black;          
+    font-weight: 1000;      
+    margin-left: 1rem;    
+    cursor: pointer; 
   }
 
-  .a::after {
-    content: attr(data-text);
-    position: absolute;
-    left: 0;
-    top: 100%;
-    color: #c0392b; /* rojo */
-    transition: top 0.3s ease;
-  }
-
-
-  .link-wrapper:hover .a {
-    transform: translateY(-100%);
-    color: transparent;
-  }
-
-  .link-wrapper:hover .a::after {
-    top: 0;
-  }
 </style>
 
 <head>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 
 <div id="top-bar" class="top-bar">
-  <div class="top-bar-content">
-    <div class="top-bar-logo">
-      <img class="logo" src={logo.src} alt="Revoco Arquitectura" />
+    <div class="top-bar-content">
+        <div class="top-bar-logo">
+            <img class="logo" src={logo.src} alt="Revoco Arquitectura" />
+        </div>
+        <div class="top-bar-links">
+            <a class="a" href="/">Inicio</a>
+            <a class="a" href="/nosotros">Nosotros</a>
+            <a class="a" href="/proyectos">Proyectos</a>
+            <a class="a" href="/contacto">Contacto</a>
+        </div>
     </div>
-    <div class="top-bar-links">
-      <div class="link-wrapper"><a class="a" href="/" data-text="Inicio">Inicio</a></div>
-      <div class="link-wrapper"><a class="a" href="/nosotros" data-text="Nosotros">Nosotros</a></div>
-      <div class="link-wrapper"><a class="a" href="/proyectos" data-text="Proyectos">Proyectos</a></div>
-      <div class="link-wrapper"><a class="a" href="/contacto" data-text="Contacto">Contacto</a></div>
-    </div>
-  </div>
+    
 </div>
 
 <script type="module" is:inline>
@@ -98,8 +72,10 @@ import logo from '../images/logo.png';
     const currentScroll = window.pageYOffset;
 
     if (currentScroll > lastScroll && currentScroll > 50) {
+      // Scroll hacia abajo
       topBar.classList.add('hidden');
     } else {
+      // Scroll hacia arriba
       topBar.classList.remove('hidden');
     }
 
