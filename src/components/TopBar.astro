@@ -35,13 +35,31 @@ import logo from '../images/logo.png';
     width: 200px;
     height: auto;
   }
-  .a {
+  .animation {
     text-decoration: none;
-    color: black;          
+    color: black;           
     font-weight: 1000;      
     margin-left: 1rem;    
     cursor: pointer; 
+    position: relative;
+    padding: 0 10px;
   }
+  .animation:after{
+    content: "";
+    position: absolute;
+    background-color: black;
+    height: 3px;
+    width: 0; 
+    left: 0;
+    bottom: -10px;
+    transition: 1s;
+  }
+
+  .animation:hover:after {
+    width: 100%;
+  }
+
+
 
 </style>
 
@@ -55,10 +73,10 @@ import logo from '../images/logo.png';
             <img class="logo" src={logo.src} alt="Revoco Arquitectura" />
         </div>
         <div class="top-bar-links">
-            <a class="a" href="/">Inicio</a>
-            <a class="a" href="/nosotros">Nosotros</a>
-            <a class="a" href="/proyectos">Proyectos</a>
-            <a class="a" href="/contacto">Contacto</a>
+            <a class="animation" href="/">Inicio</a>
+            <a class="animation" href="/nosotros">Nosotros</a>
+            <a class="animation" href="/proyectos">Proyectos</a>
+            <a class="animation" href="/contacto">Contacto</a>
         </div>
     </div>
     
