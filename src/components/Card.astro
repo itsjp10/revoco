@@ -1,0 +1,45 @@
+---
+const {  title, desc } = Astro.props;
+---
+
+
+<div class="card">
+    <p class="title"> {title} </p>
+    <p class="desc"> {desc} </p>
+</div>
+
+
+<style>
+    div {
+        background-color: #f0f0f0;
+        border-radius: 8px;
+        padding: 20px;
+        margin: 10px 0;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        font-family: 'Montserrat', sans-serif; 
+    }
+    
+    p {
+        margin: 5px 0;
+        color: #333;
+        font-size: 16px;
+    }
+
+    .title {
+        font-weight: bold;
+        font-size: 20px;
+        color: #000;
+    }
+    .card {
+        width: 400px;
+        height: 200px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+    .desc {
+        margin-top: 10px;
+    }
+</style>
