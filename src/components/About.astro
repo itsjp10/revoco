@@ -8,9 +8,10 @@ import Card from './Card.astro';
     <div class="about-text">
         <h1>Dile hola al <span>futuro</span> del renderizado y modelado 3D</h1>
         <p>Realizamos renderizado fotorrealista para empresas de arquitectura e inmobiliarias.</p>
-        <div>
-          <Card title="Contáctanos por Whatsapp" desc="Potencia ya tus proyectos con Revoco"></Card>
-        </div>    
+        <div class="card">
+            <p class="title"> Contáctanos por Whatsapp </p>
+            <p class="desc"> Potencia tus proyectos con Revoco </p>
+        </div>  
     </div>
     
     <div class="imagen-render">
@@ -20,115 +21,145 @@ import Card from './Card.astro';
 
 
 <style>
-
-.imagen-render {
-    width: 900px;
-    height: auto;
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.imagen-render img {
-    width: 175vw; 
-    height: auto;
-    object-fit: cover;
-    object-position: center;
-    display: block;
-    margin-left: -2%;
-    max-width: none;
-}
-
-.about-text {
-    margin-top: 100px;
-    display: flex;
-    flex-direction: column;
-    text-align: start;
-    font-weight: 100; 
-    padding: 56px;
-    justify-content: center;
-    width: calc(100% - 700px);
-    max-width: calc(100% - 700px);
-}
-
-.about-text span{
-    color: #778DA9;
-}
-
-.about {    
-    background-color: white;
-    display: flex;        
-    flex-direction: row;
-    text-align: center;
-    font-family: 'Urbanist', sans-serif; 
-    font-weight: 100;
-    font-size: x-large;
-    overflow-x: hidden; /* Evita el scroll horizontal */
-    max-width: 100vw;
-
-}
-
-.about p {
-    font-family: 'Urbanist', sans-serif;
-    font-weight: 600;
-    font-size: clamp(16px, 2vw, 40px); 
-    line-height: 1.4;
-    color: #000000A3;
-}
-
-.about h1 {
-    color: black;
-    font-weight: 800;
-    font-size: clamp(16px, 5vw, 64px); 
-    line-height: 1.1;
-    margin-bottom: 20px;
-}
-
-@media (max-width: 1000px) {
-    .about {
+    .card{
+        background-color: #f0f0f0;
+        border-radius: 8px;
+        padding: 20px;
+        margin: 10px 0;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        font-family: 'Montserrat', sans-serif; 
+        width: 35vw;
+        height: 200px;
+        display: flex;
         flex-direction: column;
-        gap: 1.5rem;
-        padding: 0;
-    }
-    .imagen-render {
-        width: 100%;
-        max-width: 100%;
-        height: 400px;
-    }
-    .imagen-render img {
-        width: 100%;
-        min-width: 120vw;
-        margin-left: -10%;
-        height: 100%;
-    }
-    .about-text {
-        margin-top: 0px;
-        order: 2;
-        padding: 0 1rem;
+        justify-content: center;
+        align-items: center;
         text-align: center;
-        width: 100%;
-        min-width: 100%;
+    }
+    
+    .card .desc{        
+        color: #333;
+        font-size: 16px;
+    }
+
+    .card .title {
+        font-weight: bold;
+        font-size: 20px;
+        color: #000;
+    }
+
+    .desc {
+        margin-top: 10px;
+    }    
+
+    .imagen-render {
+        width: 900px;
+        height: auto;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .imagen-render img {
+        width: 175vw; 
+        height: auto;
+        object-fit: cover;
+        object-position: center;
+        display: block;
+        margin-left: -2%;
+        max-width: none;
+    }
+
+    .about-text {
+        margin-top: 100px;
+        display: flex;
+        flex-direction: column;
+        text-align: start;
+        font-weight: 100; 
+        padding: 56px;
+        justify-content: center;
+        width: calc(100% - 700px);
+        max-width: calc(100% - 700px);
+    }
+
+    .about-text span{
+        color: #778DA9;
+    }
+
+    .about {    
+        background-color: white;
+        display: flex;        
+        flex-direction: row;
+        text-align: center;
+        font-family: 'Urbanist', sans-serif; 
+        font-weight: 100;
+        font-size: x-large;
+        overflow-x: hidden; /* Evita el scroll horizontal */
+        max-width: 100vw;
+
     }
 
     .about p {
         font-family: 'Urbanist', sans-serif;
         font-weight: 600;
-        font-size: 24px;
+        font-size: clamp(16px, 2vw, 40px); 
         line-height: 1.4;
         color: #000000A3;
-        text-align: left;
     }
 
     .about h1 {
         color: black;
         font-weight: 800;
-        font-size: 2.25rem;
+        font-size: clamp(16px, 5vw, 64px); 
         line-height: 1.1;
         margin-bottom: 20px;
-        text-align: left;
     }
-}
+
+    @media (max-width: 1000px) {
+        .about {
+            flex-direction: column;
+            gap: 1.5rem;
+            padding: 0;
+        }
+        .imagen-render {
+            width: 100%;
+            max-width: 100%;
+            height: 400px;
+        }
+        .imagen-render img {
+            width: 100%;
+            min-width: 120vw;
+            margin-left: -10%;
+            height: 100%;
+        }
+        .about-text {
+            margin-top: 0px;
+            order: 2;
+            padding: 0 1rem;
+            text-align: center;
+            width: 100%;
+            min-width: 100%;
+        }
+
+        .about p {
+            font-family: 'Urbanist', sans-serif;
+            font-weight: 600;
+            font-size: 24px;
+            line-height: 1.4;
+            color: #000000A3;
+            text-align: left;
+        }
+
+        .about h1 {
+            color: black;
+            font-weight: 800;
+            font-size: 2.25rem;
+            line-height: 1.1;
+            margin-bottom: 20px;
+            text-align: left;
+        }
+    }
 
 </style>
 
