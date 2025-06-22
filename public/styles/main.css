@@ -113,38 +113,6 @@ section h2 {
   background-color: #eee;
 }
 
-/* Projects Section */
-.projects-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 32px;
-}
-
-.project-card {
-  background: white;
-  border-radius: 8px;
-  overflow: hidden;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.project-image {
-  aspect-ratio: 16/9;
-  background-color: #eee;
-}
-
-.project-content {
-  padding: 24px;
-}
-
-.project-content h3 {
-  font-size: 1.25rem;
-  margin-bottom: 0.5rem;
-}
-
-.project-content p {
-  color: #666;
-}
-
 /* Contact Form */
 .contact-form {
   max-width: 600px;
