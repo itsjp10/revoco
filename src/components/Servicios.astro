@@ -1,5 +1,5 @@
 ---
-
+import renderizado from "../images/render.png";
 ---
 
 <div class="servicios">
@@ -9,11 +9,16 @@
         <div class="projects-grid">
             <!-- Project Card 1 -->
             <div class="project-card">
-                <div class="project-image"></div>
+                <div class="project-image">
+                    <img src={renderizado.src} alt="Renderizado de una casa moderna" />
+                </div>
                 <div class="project-content">
                     <h3>Renderizado</h3>
-                    <p> 
-                        Creamos imágenes fotorrealistas de tus diseños, permitiendo visualizar proyectos con detalle antes de construir. Presenta tus ideas de forma impactante y convincente
+                    <p>
+                        Creamos imágenes fotorrealistas de tus diseños,
+                        permitiendo visualizar proyectos con detalle antes de
+                        construir. Presenta tus ideas de forma impactante y
+                        convincente
                     </p>
                 </div>
             </div>
@@ -23,7 +28,10 @@
                 <div class="project-content">
                     <h3>Modelado 3D</h3>
                     <p>
-                        Desarrollamos modelos tridimensionales precisos de tus proyectos. Una base esencial para explorar el diseño, identificar mejoras y comunicar tu visión arquitectónica.
+                        Desarrollamos modelos tridimensionales precisos de tus
+                        proyectos. Una base esencial para explorar el diseño,
+                        identificar mejoras y comunicar tu visión
+                        arquitectónica.
                     </p>
                 </div>
             </div>
@@ -32,7 +40,11 @@
                 <div class="project-image"></div>
                 <div class="project-content">
                     <h3>Dibujo de planimetría</h3>
-                    <p>Elaboramos planos técnicos detallados y normativos (plantas, cortes, fachadas). Aseguramos la precisión para una correcta ejecución y comunicación en obra.</p>
+                    <p>
+                        Elaboramos planos técnicos detallados y normativos
+                        (plantas, cortes, fachadas). Aseguramos la precisión
+                        para una correcta ejecución y comunicación en obra.
+                    </p>
                 </div>
             </div>
 
@@ -41,7 +53,11 @@
                 <div class="project-image"></div>
                 <div class="project-content">
                     <h3>Fotomontaje</h3>
-                    <p> Integramos tus proyectos arquitectónicos en fotografías reales del entorno. Muestra cómo se verá tu diseño en su ubicación final, contextualizando y resolviendo dudas.</p>
+                    <p>
+                        Integramos tus proyectos arquitectónicos en fotografías
+                        reales del entorno. Muestra cómo se verá tu diseño en su
+                        ubicación final, contextualizando y resolviendo dudas.
+                    </p>
                 </div>
             </div>
         </div>
@@ -56,16 +72,17 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        background-color: #e0e1dd;        
+        background-color: #e0e1dd;
     }
     .servicios p {
         margin-bottom: 34px;
         font-size: 25px;
         font-family: "Urbanist", sans-serif;
+        font-weight: 500;
     }
     .servicios .title {
         font-size: 44px;
-        font-weight: 700;        
+        font-weight: 700;
         text-align: center;
         font-family: "Urbanist", sans-serif;
         color: black;
@@ -84,7 +101,7 @@
     .projects-grid {
         max-width: 1200px;
         display: flex;
-        flex-wrap: wrap;        
+        flex-wrap: wrap;
     }
 
     .project-card {
@@ -96,18 +113,24 @@
         margin: 10px;
     }
 
-    .project-card .project-content h3{
+    .project-card .project-content h3 {
         font-size: 27px;
     }
 
-    .project-card .project-content p{
+    .project-card .project-content p {
         font-size: 20px;
         font-weight: 500;
     }
 
     .project-image {
-        aspect-ratio: 16/9;
+        aspect-ratio: 12/9;
         background-color: #eee;
+    }
+
+    .project-image img{
+        width: 100%;
+        height: auto;     
+         
     }
 
     .project-content {
@@ -121,6 +144,33 @@
 
     .project-content p {
         color: #666;
+    }
+
+    @media (max-width: 1000px) {
+        .project-card {
+            flex: 1 1 calc(100% - 20px);
+        }
+        .project-card .project-content h3 {
+            font-size: 23px;
+        }
+
+        .project-card .project-content p {
+            font-size: 18px;
+            font-weight: 500;
+        }
+        .servicios p {
+            margin-bottom: 34px;
+            font-size: 18px;
+            font-family: "Urbanist", sans-serif;
+            
+        }
+        .servicios .title {
+            font-size: 30px;
+            font-weight: 700;
+            text-align: center;
+            font-family: "Urbanist", sans-serif;
+            color: black;
+        }
     }
 </style>
 
