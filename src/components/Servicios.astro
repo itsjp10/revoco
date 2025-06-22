@@ -4,35 +4,47 @@
 
 <div class="servicios">
     <div class="title">Nuestros servicios</div>
-    <div class="projects-grid">
-        <!-- Project Card 1 -->
-        <div class="project-card">
-            <div class="project-image"></div>
-            <div class="project-content">
-                <h3>Residencia Moderna</h3>
-                <p>
-                    Diseño contemporáneo que integra espacios interiores y
-                    exteriores
-                </p>
+    <p>Contamos con diferentes líneas de servicios</p>
+    <div class="proyectos">
+        <div class="projects-grid">
+            <!-- Project Card 1 -->
+            <div class="project-card">
+                <div class="project-image"></div>
+                <div class="project-content">
+                    <h3>Residencia Moderna</h3>
+                    <p>
+                        Diseño contemporáneo que integra espacios interiores y
+                        exteriores
+                    </p>
+                </div>
             </div>
-        </div>
-        <!-- Project Card 2 -->
-        <div class="project-card">
-            <div class="project-image"></div>
-            <div class="project-content">
-                <h3>Centro Comercial</h3>
-                <p>
-                    Espacio comercial innovador con enfoque en la experiencia
-                    del usuario
-                </p>
+            <!-- Project Card 2 -->
+            <div class="project-card">
+                <div class="project-image"></div>
+                <div class="project-content">
+                    <h3>Centro Comercial</h3>
+                    <p>
+                        Espacio comercial innovador con enfoque en la
+                        experiencia del usuario
+                    </p>
+                </div>
             </div>
-        </div>
-        <!-- Project Card 3 -->
-        <div class="project-card">
-            <div class="project-image"></div>
-            <div class="project-content">
-                <h3>Edificio Corporativo</h3>
-                <p>Arquitectura sostenible para el futuro del trabajo</p>
+            <!-- Project Card 3 -->
+            <div class="project-card">
+                <div class="project-image"></div>
+                <div class="project-content">
+                    <h3>Edificio Corporativo</h3>
+                    <p>Arquitectura sostenible para el futuro del trabajo</p>
+                </div>
+            </div>
+
+            <!-- Project Card 4 -->
+            <div class="project-card">
+                <div class="project-image"></div>
+                <div class="project-content">
+                    <h3>Edificio Corporativo</h3>
+                    <p>Arquitectura sostenible para el futuro del trabajo</p>
+                </div>
             </div>
         </div>
     </div>
@@ -41,28 +53,44 @@
 <style>
     /* Projects Section */
     .servicios {
+        padding-top: 50px;
+        padding-bottom: 50px;
         display: flex;
-        flex-direction: column;        
+        flex-direction: column;
+        align-items: center;
+        background-color: #e0e1dd;        
+    }
+    .servicios p {
+        margin-bottom: 34px;
+        font-size: 25px;
+        font-family: "Urbanist", sans-serif;
     }
     .servicios .title {
-        font-size: 2rem;
-        font-weight: 700;
-        margin-bottom: 24px;
+        font-size: 44px;
+        font-weight: 700;        
         text-align: center;
         font-family: "Urbanist", sans-serif;
+        color: black;
     }
     .servicios .projects-grid {
         font-family: "Urbanist", sans-serif;
     }
 
+    .servicios .proyectos {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0 20px;
+    }
+
     .projects-grid {
         max-width: 1200px;
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 32px;
+        display: flex;
+        flex-wrap: wrap;        
     }
 
     .project-card {
+        flex: 1 1 calc(33.333% - 20px);
         background: white;
         border-radius: 8px;
         overflow: hidden;
@@ -87,8 +115,6 @@
         color: #666;
     }
 </style>
-
-
 
 <head>
     <link
