@@ -12,16 +12,14 @@ import Card from "./Card.astro";
             Realizamos renderizado fotorrealista para empresas de arquitectura e
             inmobiliarias.
         </p>
-        <div class="card">
-            <div class="card-body">
-                <p class="title">Solicita tu cotización por Whatsapp</p>                
-                <button class="button-whatsapp"
-                    >Solicita tu cotización por Whatsapp
-                    <i
-                        class="bi bi-whatsapp"
-                        style="font-size: 1.5em; color: white;"></i>
-                </button>
-            </div>
+        <div class="card-body">
+            <button class="button-whatsapp"
+                >Solicita tu cotización por Whatsapp
+                <span class="empty-space"></span>
+                <i
+                    class="bi bi-whatsapp"
+                    style="font-size: 1.5em; color: white;"></i>
+            </button>
         </div>
     </div>
 
@@ -31,24 +29,14 @@ import Card from "./Card.astro";
 </div>
 
 <style>
-    .card .empty-space {
+    .card-body .empty-space {
         margin-right: 10px;
     }
-    .card {
-        background-color: #f0f0f0;
-        border-radius: 8px;
-        padding: 20px;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        font-family: "Montserrat", sans-serif;
-        max-width: 560px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        text-align: center;
-        align-items: flex-start;
-    }
 
-    .card .button-whatsapp {
+    .card-body .button-whatsapp {
+        font-weight: bold;
+        font-size: 22px;
+        margin-bottom: 0;
         background-color: #25d366;
         color: white;
         border: none;
@@ -66,15 +54,6 @@ import Card from "./Card.astro";
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
-    }
-
-    .card .title {
-        font-weight: bold;
-        font-size: 22px;
-        color: #000;
-        margin-right: 50px;
-        margin-bottom: 0;
-
     }
 
     .imagen-render {
