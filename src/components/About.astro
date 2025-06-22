@@ -2,7 +2,7 @@
 import ext3 from "../images/ext3.png";
 ---
 
-<div class="about">
+<div class="about" id="inicio">
     <div class="about-text">
         <h1>
             Impulsa tus <span>ventas</span> con renderizados 3D fotorrealistas
@@ -28,7 +28,7 @@ import ext3 from "../images/ext3.png";
 </div>
 
 <style>
-    .card-body .empty-space {
+    .card-body .empty-space { 
         margin-right: 10px;
     }
 
@@ -172,6 +172,15 @@ import ext3 from "../images/ext3.png";
             text-align: center;
         }
     }
+    .about.highlight { 
+        animation: highlightFade 1.2s;
+    }
+    @keyframes highlightFade {
+        0% { box-shadow: 0 0 0 8px #f7c873; }
+        80% { box-shadow: 0 0 0 8px #f7c873; }
+        100% { box-shadow: none; }
+    }
+
 </style>
 
 <head>
@@ -184,3 +193,34 @@ import ext3 from "../images/ext3.png";
         rel="stylesheet"
     />
 </head>
+
+
+<script>
+    if (typeof window !== "undefined") {
+        window.addEventListener("hashchange", () => {
+            if (window.location.hash === "#inicio") {
+                const section = document.getElementById("inicio");
+                if (section) {
+                    section.classList.add("highlight");
+                    setTimeout(
+                        () => section.classList.remove("highlight"),
+                        1200,
+                    );
+                }
+            }
+        });
+        // Si el usuario entra directamente con #servicios
+        if (window.location.hash === "#inicio") {
+            window.addEventListener("DOMContentLoaded", () => {
+                const section = document.getElementById("inicio");
+                if (section) {
+                    section.classList.add("highlight");
+                    setTimeout(
+                        () => section.classList.remove("highlight"),
+                        1200,
+                    );
+                }
+            });
+        }
+    }
+</script>
