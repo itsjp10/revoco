@@ -1,5 +1,8 @@
 ---
 import renderizado from "../images/render.png";
+import modelado3d from "../images/modelado3d.png";
+import planimetria from "../images/render.png";
+import fotomontaje from "../images/render.png";
 ---
 
 <div class="servicios">
@@ -10,7 +13,10 @@ import renderizado from "../images/render.png";
             <!-- Project Card 1 -->
             <div class="project-card">
                 <div class="project-image">
-                    <img src={renderizado.src} alt="Renderizado de una casa moderna" />
+                    <img
+                        src={renderizado.src}
+                        alt="Renderizado de una casa moderna"
+                    />
                 </div>
                 <div class="project-content">
                     <h3>Renderizado</h3>
@@ -24,7 +30,12 @@ import renderizado from "../images/render.png";
             </div>
             <!-- Project Card 2 -->
             <div class="project-card">
-                <div class="project-image"></div>
+                <div class="project-image">
+                    <img
+                        src={modelado3d.src}
+                        alt="Modelado 3D de un edificio moderno"
+                    />
+                </div>
                 <div class="project-content">
                     <h3>Modelado 3D</h3>
                     <p>
@@ -127,10 +138,9 @@ import renderizado from "../images/render.png";
         background-color: #eee;
     }
 
-    .project-image img{
+    .project-image img {
         width: 100%;
-        height: auto;     
-         
+        height: auto;
     }
 
     .project-content {
@@ -162,7 +172,6 @@ import renderizado from "../images/render.png";
             margin-bottom: 34px;
             font-size: 18px;
             font-family: "Urbanist", sans-serif;
-            
         }
         .servicios .title {
             font-size: 30px;
