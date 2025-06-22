@@ -5,7 +5,7 @@ import planimetria from "../images/planimetria.png";
 import fotomontaje from "../images/fotomontaje.png";
 ---
 
-<div class="servicios">
+<div class="servicios" id="servicios">
     <div class="title">Nuestros servicios</div>
     <p>Contamos con diferentes líneas de servicios</p>
     <div class="proyectos">
@@ -120,13 +120,13 @@ import fotomontaje from "../images/fotomontaje.png";
     }
 
     .projects-grid {
-        max-width: 1200px;
+        max-width: 1700px;
         display: flex;
         flex-wrap: wrap;
     }
 
     .project-card {
-        flex: 1 1 calc(40%);
+        flex: 1 1 calc(20%);
         background: white;
         border-radius: 8px;
         overflow: hidden;
@@ -135,12 +135,14 @@ import fotomontaje from "../images/fotomontaje.png";
     }
 
     .project-card .project-content h3 {
-        font-size: 27px;
+        font-size: 23px;
     }
 
     .project-card .project-content p {
-        font-size: 20px;
+        font-size: 18px;
         font-weight: 500;
+        line-height: 1.5;
+        margin-bottom: 0;
     }
 
     .project-image {
@@ -162,10 +164,6 @@ import fotomontaje from "../images/fotomontaje.png";
         margin-bottom: 0.5rem;
     }
 
-    .project-content p {
-        color: #666;
-    }
-
     @media (max-width: 1000px) {
         .project-card {
             flex: 1 1 calc(100% - 20px);
@@ -175,8 +173,10 @@ import fotomontaje from "../images/fotomontaje.png";
         }
 
         .project-card .project-content p {
-            font-size: 18px;
+            font-size: 15px;
             font-weight: 500;
+            line-height: 1.4;
+            margin-bottom: 0;
         }
         .servicios p {
             margin-bottom: 34px;
@@ -189,6 +189,20 @@ import fotomontaje from "../images/fotomontaje.png";
             text-align: center;
             font-family: "Urbanist", sans-serif;
             color: black;
+        }
+        .servicios.highlight {
+            animation: highlightFade 1.2s;
+        }
+        @keyframes highlightFade {
+            0% {
+                box-shadow: 0 0 0 8px #f7c873;
+            }
+            80% {
+                box-shadow: 0 0 0 8px #f7c873;
+            }
+            100% {
+                box-shadow: none;
+            }
         }
     }
 </style>
@@ -203,3 +217,33 @@ import fotomontaje from "../images/fotomontaje.png";
         rel="stylesheet"
     />
 </head>
+
+<script>
+    if (typeof window !== "undefined") {
+        window.addEventListener("hashchange", () => {
+            if (window.location.hash === "#servicios") {
+                const section = document.getElementById("servicios");
+                if (section) {
+                    section.classList.add("highlight");
+                    setTimeout(
+                        () => section.classList.remove("highlight"),
+                        1200,
+                    );
+                }
+            }
+        });
+        // Si el usuario entra directamente con #servicios
+        if (window.location.hash === "#servicios") {
+            window.addEventListener("DOMContentLoaded", () => {
+                const section = document.getElementById("servicios");
+                if (section) {
+                    section.classList.add("highlight");
+                    setTimeout(
+                        () => section.classList.remove("highlight"),
+                        1200,
+                    );
+                }
+            });
+        }
+    }
+</script>
