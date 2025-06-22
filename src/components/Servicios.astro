@@ -1,0 +1,102 @@
+---
+
+---
+
+<div class="servicios">
+    <div class="title">Nuestros servicios</div>
+    <div class="projects-grid">
+        <!-- Project Card 1 -->
+        <div class="project-card">
+            <div class="project-image"></div>
+            <div class="project-content">
+                <h3>Residencia Moderna</h3>
+                <p>
+                    Diseño contemporáneo que integra espacios interiores y
+                    exteriores
+                </p>
+            </div>
+        </div>
+        <!-- Project Card 2 -->
+        <div class="project-card">
+            <div class="project-image"></div>
+            <div class="project-content">
+                <h3>Centro Comercial</h3>
+                <p>
+                    Espacio comercial innovador con enfoque en la experiencia
+                    del usuario
+                </p>
+            </div>
+        </div>
+        <!-- Project Card 3 -->
+        <div class="project-card">
+            <div class="project-image"></div>
+            <div class="project-content">
+                <h3>Edificio Corporativo</h3>
+                <p>Arquitectura sostenible para el futuro del trabajo</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    /* Projects Section */
+    .servicios {
+        display: flex;
+        flex-direction: column;        
+    }
+    .servicios .title {
+        font-size: 2rem;
+        font-weight: 700;
+        margin-bottom: 24px;
+        text-align: center;
+        font-family: "Urbanist", sans-serif;
+    }
+    .servicios .projects-grid {
+        font-family: "Urbanist", sans-serif;
+    }
+
+    .projects-grid {
+        max-width: 1200px;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 32px;
+    }
+
+    .project-card {
+        background: white;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .project-image {
+        aspect-ratio: 16/9;
+        background-color: #eee;
+    }
+
+    .project-content {
+        padding: 24px;
+    }
+
+    .project-content h3 {
+        font-size: 1.25rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .project-content p {
+        color: #666;
+    }
+</style>
+
+
+
+<head>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap"
+        rel="stylesheet"
+    />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet"
+    />
+</head>
