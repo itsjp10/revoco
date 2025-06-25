@@ -1,0 +1,39 @@
+---
+import logo from '../images/logo.png';
+---
+
+<div class="portafolio">
+    <div class="perfil">
+        <img class="logo" src={logo.src} alt="Revoco Arquitectura" />
+    </div>
+    <div class="redes">
+        Redes
+    </div>
+    <div class="fotos">
+        Fotos
+    </div>
+</div>
+
+<style>
+.portafolio {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 100px;
+}
+.logo {
+    width: 140px;
+    height: auto;
+  }
+.perfil {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 1px solid #ecebeb;
+}
+</style>
