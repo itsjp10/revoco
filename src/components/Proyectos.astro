@@ -14,31 +14,32 @@ const imagenes: Record<string, { default: ImagenProcesada }> = import.meta.glob(
   { eager: true },
 );
 
-const fotos: ImagenProcesada[] = Object.values(imagenes).map(
-  (img) => img.default,
-);
+const fotos: ImagenProcesada[] = Object.values(imagenes).map((img) => img.default);
 ---
 
 <div class="portafolio">
   <div class="perfil">
     <img class="logo" src={logo.src} alt="Revoco Arquitectura" />
   </div>
+
   <div class="redes">
     <img src={fiverr.src} alt="icono de Fiverr" />
     <i class="bi bi-instagram"></i>
     <i class="bi bi-behance"></i>
   </div>
+
   <div class="fotos">
     {
       fotos.map((foto, i) => (
-        <div class={`image-container${(i + 1) % 3 === 0 ? "tres" : ""}`}>
+        <div class={`image-container ${(i + 1) % 3 === 0 ? "tres" : ""}`}>
           <img src={foto.src} alt={`foto-${i}`} class="foto-item" />
-          <div class="overlay" />
-          <i class="bi bi-suit-heart-fill" />
+          <div class="overlay desktop-only"></div>
+          <i class="bi bi-suit-heart-fill"></i>
         </div>
       ))
     }
   </div>
+
   <div id="modal" class="modal hidden">
     <span id="cerrarModal" class="cerrar">&times;</span>
     <img id="modalImagen" src="" alt="Imagen ampliada" />
@@ -50,7 +51,6 @@ const fotos: ImagenProcesada[] = Object.values(imagenes).map(
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
     margin-top: 120px;
     gap: 10px;
   }
@@ -62,7 +62,6 @@ const fotos: ImagenProcesada[] = Object.values(imagenes).map(
 
   .perfil {
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
     width: 150px;
@@ -84,8 +83,7 @@ const fotos: ImagenProcesada[] = Object.values(imagenes).map(
 
   .redes img {
     width: calc(1.75rem - 2px);
-    margin-right: 10px;
-    margin-left: 20px;
+    margin: 0 10px 0 20px;
   }
 
   .fotos {
@@ -95,46 +93,26 @@ const fotos: ImagenProcesada[] = Object.values(imagenes).map(
     gap: 8px;
     max-width: 1000px;
     margin-top: 20px;
+    width: 100%;
+  }
+
+  .image-container {
+    position: relative;
+    aspect-ratio: 1 / 1;
+    width: 100%;
+  }
+
+  .image-container.tres {
+    aspect-ratio: 1 / 2;
+    grid-row: span 2;
   }
 
   .foto-item {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    display: block;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    display: block; /*  Para evitar espacio extra debajo */
-  }
-
-  .image-container {
-    position: relative;
-    width: 300px;
-    height: 300px;
-  }
-
-  .image-containertres {
-    position: relative;
-    width: 300px;
-    grid-row: span 2;
-  }
-
-  .image-container .overlay,  .image-containertres .overlay{ 
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0); /* transparente inicialmente */
-    transition: background-color 0.3s ease;
-  }
-
-  .image-container:hover .overlay, .image-containertres:hover .overlay {
-    background-color: rgba(0, 0, 0, 0.5); /* oscuro al hacer hover */
-    cursor: pointer;
-  }
-
-  .image-container:hover i, .image-containertres:hover i {
-    opacity: 1; /* Mostrar icono al hacer hover */
-    cursor: pointer;
   }
 
   .overlay {
@@ -143,17 +121,26 @@ const fotos: ImagenProcesada[] = Object.values(imagenes).map(
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0); /* Inicialmente transparente */
+    background-color: transparent;
     transition: background-color 0.3s ease;
   }
 
-  .image-container i, .image-containertres i {
+  .image-container:hover .overlay {
+    background-color: rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+  }
+
+  .image-container:hover i {
+    opacity: 1;
+    cursor: pointer;
+  }
+
+  .image-container i {
     color: white;
-    position: absolute;
     position: absolute;
     top: 45%;
     left: 45%;
-    z-index: 1; /* Para que esté encima de la imagen */
+    z-index: 1;
     font-size: 2.5rem;
     opacity: 0;
   }
@@ -191,17 +178,32 @@ const fotos: ImagenProcesada[] = Object.values(imagenes).map(
     cursor: pointer;
     z-index: 1001;
   }
+
+  .desktop-only {
+    display: block;
+  }
+
   @media (max-width: 1000px) {
     .fotos {
-      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
     }
-    .image-container {
-      width: 200px;
-      height: 200px;
+
+    .image-container,
+    .image-container.tres {
+      aspect-ratio: 1 / 1 !important;
+      grid-row: auto;
     }
-    .image-containertres {
-      width: 200px;
-      grid-row: span 2;
+
+    .image-container:hover .overlay,
+    .image-container:hover i {
+      background-color: transparent;
+      opacity: 0;
+      cursor: default;
+    }
+
+    .desktop-only {
+      display: none;
     }
   }
 </style>
@@ -212,14 +214,6 @@ const fotos: ImagenProcesada[] = Object.values(imagenes).map(
   const cerrarBtn = document.getElementById("cerrarModal");
 
   document.querySelectorAll(".image-container").forEach((container) => {
-    container.addEventListener("click", () => {
-      const img = container.querySelector("img");
-      modal.classList.remove("hidden");
-      modalImg.src = img.src;
-    });
-  });
-
-  document.querySelectorAll(".image-containertres").forEach((container) => {
     container.addEventListener("click", () => {
       const img = container.querySelector("img");
       modal.classList.remove("hidden");
