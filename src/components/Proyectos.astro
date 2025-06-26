@@ -1,49 +1,102 @@
 ---
+interface ImagenProcesada {
+  src: string;
+  width: number;
+  height: number;
+  format: string;
+}
+
 import logo from "../images/logo.png";
 import fiverr from "../images/fiverr.svg";
+
+// 👇 Corrección: import.meta.glob retorna objetos con propiedad 'default' que es ImagenProcesada
+const imagenes: Record<string, { default: ImagenProcesada }> = import.meta.glob(
+  "../images/proyecto/*.{jpg,jpeg,png,webp,svg}",
+  { eager: true }
+);
+
+// 👇 Extraer solo los datos de cada imagen
+const fotos: ImagenProcesada[] = Object.values(imagenes).map((img) => img.default);
 ---
 
 <div class="portafolio">
-    <div class="perfil">
-        <img class="logo" src={logo.src} alt="Revoco Arquitectura" />
-    </div>
-    <div class="redes">
-        <img src={fiverr.src} alt="icono de Fiverr" />
-        <i class="bi bi-instagram"></i>
-        <i class="bi bi-behance"></i>
-    </div>
-    <div class="fotos">Fotos</div>
+  <div class="perfil">
+    <img class="logo" src={logo.src} alt="Revoco Arquitectura" />
+  </div>
+  <div class="redes">
+    <img src={fiverr.src} alt="icono de Fiverr" />
+    <i class="bi bi-instagram"></i>
+    <i class="bi bi-behance"></i>
+  </div>
+  <div class="fotos">
+    {fotos.map((foto, i) => (
+      <img src={foto.src} alt={`foto-${i}`} class="foto-item" />
+    ))}
+  </div>
 </div>
 
 <style>
-    .portafolio {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        margin-top: 120px;
-    }
-    .logo {
-        width: 140px;
-        height: auto;
-    }
-    .perfil {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        width: 150px;
-        height: 150px;
-        border-radius: 50%;
-        border: 1px solid #ecebeb;
-    }
-    .redes i {
-        font-size: 1.75rem;
-        margin-right: 10px;
-    }
-    .redes img {        
-        width: calc(1.75rem - 2px);
-        margin-right: 10px;
-        margin-left: 20px;
-    }
+  .portafolio {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 120px;
+    gap: 10px;
+  }
+
+  .logo {
+    width: 140px;
+    height: auto;
+  }
+
+  .perfil {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 1px solid #ecebeb;
+  }
+
+  .redes {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+  }
+
+  .redes i {
+    font-size: 1.75rem;
+    margin-right: 10px;
+  }
+
+  .redes img {
+    width: calc(1.75rem - 2px);
+    margin-right: 10px;
+    margin-left: 20px;
+  }
+
+  .fotos {
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+  }
+
+  .foto-item {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+  }
+
+  .foto-item:hover {
+    transform: scale(1.05);
+  }
 </style>
+
