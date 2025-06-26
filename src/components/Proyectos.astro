@@ -12,11 +12,13 @@ import fiverr from "../images/fiverr.svg";
 // 👇 Corrección: import.meta.glob retorna objetos con propiedad 'default' que es ImagenProcesada
 const imagenes: Record<string, { default: ImagenProcesada }> = import.meta.glob(
   "../images/proyecto/*.{jpg,jpeg,png,webp,svg}",
-  { eager: true }
+  { eager: true },
 );
 
 // 👇 Extraer solo los datos de cada imagen
-const fotos: ImagenProcesada[] = Object.values(imagenes).map((img) => img.default);
+const fotos: ImagenProcesada[] = Object.values(imagenes).map(
+  (img) => img.default,
+);
 ---
 
 <div class="portafolio">
@@ -29,9 +31,14 @@ const fotos: ImagenProcesada[] = Object.values(imagenes).map((img) => img.defaul
     <i class="bi bi-behance"></i>
   </div>
   <div class="fotos">
-    {fotos.map((foto, i) => (
-      <img src={foto.src} alt={`foto-${i}`} class="foto-item" />
-    ))}
+    {
+      fotos.map((foto, i) => (
+        <div class="image-container">
+          <img src={foto.src} alt={`foto-${i}`} class="foto-item" />
+          <div class="overlay" />
+        </div>
+      ))
+    }
   </div>
 </div>
 
@@ -79,24 +86,51 @@ const fotos: ImagenProcesada[] = Object.values(imagenes).map((img) => img.defaul
   }
 
   .fotos {
+    max-width: 1000px;
     margin-top: 20px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 12px;
+    gap: 8px;
   }
 
   .foto-item {
-    width: 200px;
-    height: 200px;
+    width: 100%;
+    height: 100%;
     object-fit: cover;
-    border-radius: 8px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
+    display: block; /*  Para evitar espacio extra debajo */
   }
 
-  .foto-item:hover {
-    transform: scale(1.05);
+  .image-container {
+    position: relative;
+    width: 300px;
+    height: 410px;
   }
+
+  .image-container .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0); /* transparente inicialmente */
+    transition: background-color 0.3s ease;
+  }
+
+  .image-container:hover .overlay {
+    background-color: rgba(0, 0, 0, 0.5); /* oscuro al hacer hover */
+  }
+
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1; /* Para que esté encima de la imagen */
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0); /* Inicialmente transparente */
+    transition: background-color 0.3s ease;
+  }
+  
 </style>
-
