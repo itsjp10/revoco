@@ -2,7 +2,7 @@
 
 ---
 
-<div class="Precios">
+<div class="precios">
     <h1 class="title">Precios</h1>
     <table>
         <tr>
@@ -13,65 +13,101 @@
         <tr>
             <td>Modelo en Sketchup</td>
             <td>Por hora</td>
-            <td>$40,000</td>            
+            <td>$40,000</td>
         </tr>
         <tr>
             <td>Modelo en Revit</td>
             <td>Por hora</td>
-            <td>$50,000</td>            
+            <td>$50,000</td>
         </tr>
         <tr>
             <td>Render Interior Vivienda</td>
             <td>Unitario</td>
-            <td>$250,000</td>            
+            <td>$250,000</td>
         </tr>
         <tr>
             <td>Render Interior Comercio</td>
             <td>Unitario</td>
-            <td>$300,000</td>            
+            <td>$300,000</td>
         </tr>
         <tr>
             <td>Render Exterior Vivienda</td>
             <td>Unitario</td>
-            <td>$250,000</td>            
+            <td>$250,000</td>
         </tr>
         <tr>
             <td>Render Exterior Edificio Apto</td>
             <td>Unitario</td>
-            <td>$300,000</td>            
+            <td>$300,000</td>
         </tr>
         <tr>
             <td>Render Exterior Comercio</td>
             <td>Unitario</td>
-            <td>$240,000</td>            
+            <td>$240,000</td>
         </tr>
         <tr>
             <td>Planta Arquitectonica Ambientada</td>
             <td>Unitario</td>
-            <td>$200,000</td>            
+            <td>$200,000</td>
         </tr>
         <tr>
             <td>Planta Arquitectónica 3D</td>
             <td>Unitario</td>
-            <td>$400,000</td>            
+            <td>$400,000</td>
         </tr>
         <tr>
-            <td>Recorrido Virtual (1 minuto)</td>
+            <td class="border-left">Recorrido Virtual (1 minuto)</td>
             <td>Unitario</td>
-            <td>$3,000,000</td>            
+            <td class="border-right">$3,000,000</td>
         </tr>
-
     </table>
 </div>
 
 <style>
+    .precios {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+    }
+    table {
+        width: 60%;
+        font-family: "Urbanist", sans-serif;
+        border-collapse: collapse;
+        border-radius: 10px;
+        border-style: hidden; /* hide standard table (collapsed) border */
+        box-shadow: 0 0 0 1px #666; /* this draws the table border  */
+        background-color: #415a77;
+        margin-bottom: 40px;
+        font-size: 20px;
+    }
+    th {
+        padding: 15px;
+        text-align: left;
+        color: white;
+    }
+    td {
+        padding-left: 15px;
+        padding-right: 15px;
+        padding-top: 7px;
+        padding-bottom: 7px;
+        font-weight: 600;
+        background-color: #e0e1dd;
+    }
+    .border-left {
+        border-bottom-left-radius: 10px;
+    }
+    .border-right {
+        border-bottom-right-radius: 10px;
+    }
+
     h1 {
         margin-top: 50px;
         font-size: 44px;
         font-weight: 700;
         text-align: center;
         font-family: "Urbanist", sans-serif;
-        color: black; 
+        color: black;
     }
 
     @media (max-width: 1000px) {
@@ -82,9 +118,12 @@
             font-family: "Urbanist", sans-serif;
             color: black;
         }
+        table {
+            width: 90%;            
+            font-size: 15px; 
+        }
     }
 </style>
-
 
 <head>
     <link
@@ -96,4 +135,3 @@
         rel="stylesheet"
     />
 </head>
-
