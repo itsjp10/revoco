@@ -4,24 +4,101 @@ import render_vision from "../images/render_vision.png";
 
 <div class="vision">
     <h1>Nuestra Vision</h1>
-    <p>
-        En Revoco Arquitectura, creemos que cada espacio tiene el potencial de
-        transformar vidas. Nuestro equipo de arquitectos apasionados combina
-        creatividad, innovación y sostenibilidad para crear diseños que no solo
-        son estéticamente impresionantes, sino también funcionales y respetuosos
-        con el medio ambiente.
-    </p>
-    <p>
-        Hemos desarrollado proyectos que van desde residencias privadas hasta
-        complejos comerciales, siempre manteniendo nuestro compromiso con la
-        excelencia y la satisfacción del cliente.
-    </p>
-    <div>
-        <div class="image-grid">
-            <img src={render_vision.src} alt="">
-            <div class="image-item"></div>
-            <div class="image-item"></div>
-            <div class="image-item"></div>
+    <div class="content">
+        <div class="desc">
+            <p>
+                En Revoco Arquitectura, creemos que cada espacio tiene el
+                potencial de transformar vidas. Nuestro equipo de arquitectos
+                apasionados combina creatividad, innovación y sostenibilidad
+                para crear diseños que no solo son estéticamente impresionantes,
+                sino también funcionales y respetuosos con el medio ambiente.
+            </p>
+            <br>
+            <p>
+                Hemos desarrollado proyectos que van desde residencias privadas
+                hasta complejos comerciales, siempre manteniendo nuestro
+                compromiso con la excelencia y la satisfacción del cliente.
+            </p>
+        </div>
+        <div class="images">
+            <img src={render_vision.src} alt="" />
+            <img src={render_vision.src} alt="" />
+            <img src={render_vision.src} alt="" />
+            <img src={render_vision.src} alt="" />
         </div>
     </div>
 </div>
+
+<style>
+    h1 {
+        text-align: center;
+        margin-bottom: 20px;
+        font-family: "Urbanist", sans-serif;
+    }
+    .vision {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;        
+    }
+    .vision p {
+        font-family: "Urbanist", sans-serif;
+        font-size: 18px;
+        font-weight: 500;
+        color: #333;
+    }
+    .content {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 40px;
+    }
+    .desc {
+        max-width: 30%;
+    }
+    img {
+        width: 300px;
+        height: auto;
+    }
+    .images {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 1024px) {
+        .content {
+            gap: 10px;
+            flex-direction: column;
+        }
+        .desc {
+            max-width: 90%;
+        }
+        img {
+            width: 100%;
+            height: auto;
+        }
+        .vision{
+            padding: 0px;
+        }
+        .images {
+            width: 90%;
+            gap: 10px;
+        }
+    }
+
+</style>
+
+
+<head>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap"
+        rel="stylesheet"
+    />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet"
+    />
+</head>
