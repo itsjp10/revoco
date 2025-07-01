@@ -3,7 +3,7 @@ import render_vision from "../images/render_vision.png";
 ---
 
 <div class="vision">
-    <h1>Nuestra Vision</h1>
+    <h1>Nuestra Visión</h1>
     <div class="content">
         <div class="desc">
             <p>
@@ -52,7 +52,7 @@ import render_vision from "../images/render_vision.png";
         flex-direction: row;
         justify-content: center;
         align-items: center;
-        gap: 40px;
+        gap: 40px;        
     }
     .desc {
         max-width: 30%;
@@ -66,10 +66,17 @@ import render_vision from "../images/render_vision.png";
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 16px;
+        margin-bottom: 30px;
     }
 
     /* Responsive Design */
     @media (max-width: 1024px) {
+        h1 {
+            font-size: 30px;
+        }
+        .vision p{
+            font-size: 16px;
+        }
         .content {
             gap: 10px;
             flex-direction: column;
