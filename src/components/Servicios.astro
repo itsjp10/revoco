@@ -3,119 +3,137 @@ import renderizado from "../images/render.png";
 import modelado3d from "../images/modelado3d.png";
 import planimetria from "../images/planimetria.png";
 import fotomontaje from "../images/fotomontaje.png";
+import arquitecta_azul from "../images/arquitecta-azul.png";
 ---
 
 <div class="servicios" id="servicios">
-    <div class="title">Nuestros servicios</div>
-    <p>Contamos con diferentes líneas de servicios</p>
-    <div class="proyectos">
-        <div class="projects-grid">
-            <!-- Project Card 1 -->
-            <div class="project-card">
-                <div class="project-image">
-                    <img
-                        src={renderizado.src}
-                        alt="Renderizado de una casa moderna"
-                    />
-                </div>
-                <div class="project-content">
-                    <h3>Renderizado</h3>
-                    <p>
-                        Creamos imágenes fotorrealistas de tus diseños,
-                        permitiendo visualizar proyectos con detalle antes de
-                        construir. Presenta tus ideas de forma impactante y
-                        convincente
-                    </p>
-                </div>
-            </div>
-            <!-- Project Card 2 -->
-            <div class="project-card">
-                <div class="project-image">
-                    <img
-                        src={modelado3d.src}
-                        alt="Modelado 3D de un edificio moderno"
-                    />
-                </div>
-                <div class="project-content">
-                    <h3>Modelado 3D</h3>
-                    <p>
-                        Desarrollamos modelos tridimensionales precisos de tus
-                        proyectos. Una base esencial para explorar el diseño,
-                        identificar mejoras y comunicar tu visión
-                        arquitectónica.
-                    </p>
-                </div>
-            </div>
-            <!-- Project Card 3 -->
-            <div class="project-card">
-                <div class="project-image">
-                    <img
-                        src={planimetria.src}
-                        alt="Renderizado de una casa moderna"
-                    />
-                </div>
-                <div class="project-content">
-                    <h3>Dibujo de planimetría</h3>
-                    <p>
-                        Elaboramos planos técnicos detallados y normativos
-                        (plantas, cortes, fachadas). Aseguramos la precisión
-                        para una correcta ejecución y comunicación en obra.
-                    </p>
-                </div>
-            </div>
+    <div class="nosotros">
+        <img class="arqui" src={arquitecta_azul.src} alt="" />
+        <h1 class="title">Sobre nosotros</h1>
+        <p class="desc">
+            Duis aute irure dolor in reprehenderit in voluptate velit esse
+            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+            cupidatat non proident, sunt in culpa qui officia deserunt mollit
+            anim.
+        </p>
+    </div>
 
-            <!-- Project Card 4 -->
-            <div class="project-card">
-                <div class="project-image">
-                    <img
-                        src={fotomontaje.src}
-                        alt="Renderizado de una casa moderna"
-                    />
+    <div class="servicios-content">
+        <p>Contamos con diferentes líneas de servicios</p>
+        <div class="proyectos">
+            <div class="projects-grid">
+                <!-- Project Card 1 -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <img
+                            src={renderizado.src}
+                            alt="Renderizado de una casa moderna"
+                        />
+                    </div>
+                    <div class="project-content">
+                        <h3>Renderizado</h3>
+                        <p>
+                            Creamos imágenes fotorrealistas de tus diseños,
+                            permitiendo visualizar proyectos con detalle antes
+                            de construir. Presenta tus ideas de forma impactante
+                            y convincente
+                        </p>
+                    </div>
                 </div>
-                <div class="project-content">
-                    <h3>Fotomontaje</h3>
-                    <p>
-                        Integramos tus proyectos arquitectónicos en fotografías
-                        reales del entorno. Muestra cómo se verá tu diseño en su
-                        ubicación final, contextualizando y resolviendo dudas.
-                    </p>
+                <!-- Project Card 2 -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <img
+                            src={modelado3d.src}
+                            alt="Modelado 3D de un edificio moderno"
+                        />
+                    </div>
+                    <div class="project-content">
+                        <h3>Modelado 3D</h3>
+                        <p>
+                            Desarrollamos modelos tridimensionales precisos de
+                            tus proyectos. Una base esencial para explorar el
+                            diseño, identificar mejoras y comunicar tu visión
+                            arquitectónica.
+                        </p>
+                    </div>
+                </div>
+                <!-- Project Card 3 -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <img
+                            src={planimetria.src}
+                            alt="Renderizado de una casa moderna"
+                        />
+                    </div>
+                    <div class="project-content">
+                        <h3>Dibujo de planimetría</h3>
+                        <p>
+                            Elaboramos planos técnicos detallados y normativos
+                            (plantas, cortes, fachadas). Aseguramos la precisión
+                            para una correcta ejecución y comunicación en obra.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Project Card 4 -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <img
+                            src={fotomontaje.src}
+                            alt="Renderizado de una casa moderna"
+                        />
+                    </div>
+                    <div class="project-content">
+                        <h3>Fotomontaje</h3>
+                        <p>
+                            Integramos tus proyectos arquitectónicos en
+                            fotografías reales del entorno. Muestra cómo se verá
+                            tu diseño en su ubicación final, contextualizando y
+                            resolviendo dudas.
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-    <div class="title" class="title-elegir">¿Por qué elegirnos?</div>
-    <div class="elegir-section">
-        <div class="card">
-            <i class="bi bi-piggy-bank" style="font-size: 5em; color: #415A77;"
-            ></i>
-            <h3>Precios asequibles</h3>
-            <p>
-                Ofrecemos tarifas competitivas sin sacrificar la calidad.
-                Excelencia arquitectónica al alcance de tu presupuesto.
-            </p>
+    <div class="elegirnos">
+        <div class="title" class="title-elegir">¿Por qué elegirnos?</div>
+        <div class="elegir-section">
+            <div class="card">
+                <i
+                    class="bi bi-piggy-bank"
+                    style="font-size: 5em; color: #415A77;"></i>
+                <h3>Precios asequibles</h3>
+                <p>
+                    Ofrecemos tarifas competitivas sin sacrificar la calidad.
+                    Excelencia arquitectónica al alcance de tu presupuesto.
+                </p>
+            </div>
+            <div class="card">
+                <i
+                    class="bi bi-calendar2-check"
+                    style="font-size: 5em; color: #415A77;"></i>
+                <h3>Entrega rápida</h3>
+                <p>
+                    Nos comprometemos a una entrega eficiente y puntual. Tu
+                    proyecto listo cuando lo necesitas, sin demoras.
+                </p>
+            </div>
+            <div class="card">
+                <i
+                    class="bi bi-house-heart"
+                    style="font-size: 5em; color: #415A77;"></i>
+                <h3>Expertos Calificados</h3>
+                <p>
+                    Contamos con profesionales altamente cualificados y con
+                    experiencia. Tu visión en manos expertas para resultados
+                    impecables.
+                </p>
+            </div>
         </div>
-        <div class="card">
-            <i
-                class="bi bi-calendar2-check"
-                style="font-size: 5em; color: #415A77;"></i>
-            <h3>Entrega rápida</h3>
-            <p>
-                Nos comprometemos a una entrega eficiente y puntual. Tu proyecto
-                listo cuando lo necesitas, sin demoras.
-            </p>
-        </div>
-        <div class="card">
-            <i class="bi bi-house-heart" style="font-size: 5em; color: #415A77;"
-            ></i>
-            <h3>Expertos Calificados</h3>
-            <p>
-                Contamos con profesionales altamente cualificados y con
-                experiencia. Tu visión en manos expertas para resultados
-                impecables.
-            </p>
-        </div>
-    </div>    
-    <button class="elegirnos-button">Solicitar servicio</button>
+        <button class="elegirnos-button">Solicitar servicio</button>
+    </div>
 </div>
 
 <style>
@@ -136,7 +154,7 @@ import fotomontaje from "../images/fotomontaje.png";
         flex-direction: column;
         align-items: center;
         text-align: center;
-        padding: 20px;        
+        padding: 20px;
         margin: 0 20px;
         max-width: 360px;
     }
@@ -149,8 +167,8 @@ import fotomontaje from "../images/fotomontaje.png";
         font-weight: 500;
         line-height: 1.5;
     }
-    .elegirnos-button{
-        background-color: #415A77;
+    .elegirnos-button {
+        background-color: #415a77;
         color: white;
         padding: 12px 24px;
         border: none;
@@ -276,12 +294,10 @@ import fotomontaje from "../images/fotomontaje.png";
         .elegir-section .card {
             padding: 0;
         }
-        .elegir-section{
-            padding-top: 0;       
+        .elegir-section {
+            padding-top: 0;
             gap: 0;
-
         }
-
 
         @keyframes highlightFade {
             0% {
