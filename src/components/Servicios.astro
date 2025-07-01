@@ -9,15 +9,17 @@ import arquitecta_azul from "../images/arquitecta-azul.png";
 <div class="servicios" id="servicios">
     <div class="nosotros">
         <img class="arqui" src={arquitecta_azul.src} alt="" />
-        <h1 class="title">Sobre nosotros</h1>
-        <p class="desc">
-            Duis aute irure dolor in reprehenderit in voluptate velit esse
-            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-            cupidatat non proident, sunt in culpa qui officia deserunt mollit
-            anim.
-        </p>
+        <div class="nosotros-content">
+            <h1 class="title">Sobre nosotros</h1>
+            <p class="desc">
+                Duis aute irure dolor in reprehenderit in voluptate velit esse
+                cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+                cupidatat non proident, sunt in culpa qui officia deserunt
+                mollit anim.
+            </p>
+            <button>Contáctanos por Whatsapp</button>
+        </div>
     </div>
-
     <div class="servicios-content">
         <p>Contamos con diferentes líneas de servicios</p>
         <div class="proyectos">
@@ -256,6 +258,43 @@ import arquitecta_azul from "../images/arquitecta-azul.png";
         margin-bottom: 0.5rem;
     }
 
+    .nosotros {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+    }
+    .nosotros img {
+        width: 400px;
+        height: auto;
+    }
+    .nosotros-content {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 18px;
+        max-width: 482px;
+        padding: 20px;
+    }
+    .nosotros-content .title {
+        margin-top: 0;
+    }
+    .nosotros-content p {
+        font-size: 18px;
+    }
+
+    .nosotros-content button {
+        background-color: #415a77;
+        color: white;
+        padding: 12px 24px;
+        border: none;
+        border-radius: 20px;
+        font-size: 18px;
+        font-weight: 550;
+        cursor: pointer;
+    }
+    /* header about */
+
     @media (max-width: 1000px) {
         .project-card {
             flex: 1 1 calc(100% - 20px);
@@ -297,6 +336,24 @@ import arquitecta_azul from "../images/arquitecta-azul.png";
         .elegir-section {
             padding-top: 0;
             gap: 0;
+        }
+        .nosotros {
+            display: flex;
+            flex-direction: column;            
+        }
+        .nosotros img {
+            width: 90%;
+            height: auto;
+        }
+        .nosotros-content {
+            align-items: center;
+            text-align: center;
+        }
+        .nosotros-content h1{
+            font-size: 30px;
+        }
+        .nosotros-content p{
+            font-size: 15px;
         }
 
         @keyframes highlightFade {
