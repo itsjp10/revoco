@@ -102,7 +102,7 @@ import arquitecta_azul from "../images/arquitecta-azul.png";
     <section class="elegirnos_section">
         <div class="elegirnos">
             <div class="elegirnos-header">
-                <h1 class="title">Beneficios de trabajar con nosotros</h1>
+                <h2>Beneficios de trabajar con nosotros</h2>
                 <p>
                     Ut enim ad minim veniam, quis nostrud exercitation ullamco
                     laboris nisi ut aliquip ex ea commodo consequat. Duis aute
@@ -158,11 +158,16 @@ import arquitecta_azul from "../images/arquitecta-azul.png";
     }
     .elegirnos {
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
         align-items: center;
+        justify-content: center;
+    }
+    .elegirnos-header {
+        width: 30%;
     }
     .elegir-section {
         display: flex;
+        flex-direction: column;
         justify-content: center;
         flex-wrap: wrap;
         gap: 20px;
@@ -199,9 +204,14 @@ import arquitecta_azul from "../images/arquitecta-azul.png";
         border-radius: 50%;
         background-color: white;
     }
-    .elegirnos-header .title {
+    .elegirnos-header h2 {
+        max-width: 400px;
         color: white;
-        font-size: 55px;
+        font-size: 65px;
+        font-family: "Urbanist", sans-serif;
+        font-weight: 700;        
+        text-align: left;
+        line-height: normal;
     }
 
     /* Projects Section */
