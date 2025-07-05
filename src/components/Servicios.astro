@@ -112,33 +112,45 @@ import arquitecta_azul from "../images/arquitecta-azul.png";
             </div>
             <div class="elegir-section">
                 <div class="card">
-                    <i
-                        class="bi bi-piggy-bank"
-                        style="font-size: 5em; color: black;"></i>
-                    <h3>Precios asequibles</h3>
-                    <p>
-                        Ofrecemos tarifas competitivas sin sacrificar la
-                        calidad. 
-                    </p>
+                    <div class="icono">
+                        <i
+                            class="bi bi-piggy-bank"
+                            style="font-size: 80px; color: black;"></i>
+                    </div>
+                    <div class="body-card">
+                        <h3>Precios asequibles</h3>
+                        <p>
+                            Ofrecemos tarifas competitivas sin sacrificar la
+                            calidad.
+                        </p>
+                    </div>
                 </div>
                 <div class="card">
-                    <i
-                        class="bi bi-calendar2-check"
-                        style="font-size: 5em; color: black;"></i>
-                    <h3>Entrega rápida</h3>
-                    <p>
-                        Tu proyecto listo cuando lo necesitas, sin demoras.
-                    </p>
+                    <div class="icono">
+                        <i
+                            class="bi bi-calendar2-check"
+                            style="font-size: 80px; color: black;"></i>
+                    </div>
+                    <div class="body-card">
+                        <h3>Entrega rápida</h3>
+                        <p>
+                            Tu proyecto listo cuando lo necesitas, sin demoras.
+                        </p>
+                    </div>
                 </div>
                 <div class="card">
-                    <i
-                        class="bi bi-house-heart"
-                        style="font-size: 5em; color: black;"></i>
-                    <h3>Expertos Calificados</h3>
-                    <p>
-                        Tu visión en manos expertas para resultados
-                        impecables.
-                    </p>
+                    <div class="icono">
+                        <i
+                            class="bi bi-house-heart"
+                            style="font-size: 80px; color: black;"></i>
+                    </div>
+                    <div class="body-card">
+                        <h3>Expertos Calificados</h3>
+                        <p>
+                            Tu visión en manos expertas para resultados
+                            impecables.
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -176,13 +188,14 @@ import arquitecta_azul from "../images/arquitecta-azul.png";
     }
     .elegir-section .card {
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
         align-items: center;
         text-align: center;
         padding: 20px;
         margin: 0 20px;
         max-width: 360px;
     }
+    
     .elegir-section .card h3 {
         font-size: 23px;
         font-weight: 600;
@@ -192,21 +205,25 @@ import arquitecta_azul from "../images/arquitecta-azul.png";
         font-weight: 500;
         line-height: 1.5;
     }
-    .card i {
+    .card .icono {
+        width: 150px; 
+        height: 150px;
         display: flex;
         justify-content: center;
         align-items: center;
-        width: 150px;
-        height: 150px;
         border-radius: 50%;
         background-color: white;
+        
+    }
+    .icono i .bi.bi-house-heart{
+        font-size: 1800px;
     }
     .elegirnos-header h2 {
         max-width: 400px;
         color: white;
         font-size: 65px;
         font-family: "Urbanist", sans-serif;
-        font-weight: 700;        
+        font-weight: 700;
         text-align: left;
         line-height: normal;
     }
